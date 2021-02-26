@@ -1,0 +1,28 @@
+﻿
+@model ProjeCv.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>HOBİLERİM</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model.Deger5)
+        {
+            <tr>
+                <th>@x.ID</th>
+                <td>@x.INTEREST</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Hobiler/YeniHobi/" class="btn btn-info">Yeni Hobi Ekle</a>
+

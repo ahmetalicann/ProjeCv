@@ -30,5 +30,12 @@ namespace ProjeCv.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult BasarimSil(int id)
+        {
+            var basarim = db.TBLAWARDS.Find(id);
+            db.TBLAWARDS.Remove(basarim);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

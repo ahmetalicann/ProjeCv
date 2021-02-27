@@ -10,16 +10,20 @@
         <tr>
             <th>ID</th>
             <th>BAŞARIMLAR</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var x in Model.Deger6)
         {
-            <tr>
-                <th>@x.ID</th>
-                <td>@x.AWARD</td>
-            </tr>
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.AWARD</td>
+            <td><a href="/Basarim/BasarimSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+        </tr>
         }
     </tbody>
 </table>

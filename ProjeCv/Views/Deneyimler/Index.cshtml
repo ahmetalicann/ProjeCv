@@ -13,6 +13,8 @@
             <th>ALT BAŞLIK</th>
             <th>TARİH</th>
             <th>DETAYLAR</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
         </tr>
     </thead>
 
@@ -25,6 +27,8 @@
                 <td>@x.SUBTITLE</td>
                 <td>@x.DATE</td>
                 <td>@x.DETAILS</td>
+                <td><a href="/Deneyimler/DeneyimSil/@x.ID" class="btn btn-danger">Sil</a></td>
+                <td><a href="#" class="btn btn-success">Güncelle</a></td>
             </tr>
         }
     </tbody>

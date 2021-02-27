@@ -13,19 +13,23 @@
             <th>ALT BAŞLIK</th>
             <th>BÖLÜM</th>
             <th>GPA</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var x in Model.Deger3)
         {
-            <tr>
-                <th>@x.ID</th>
-                <td>@x.TITLE</td>
-                <td>@x.SUBTITLE</td>
-                <td>@x.DEPARTMENT</td>
-                <td>@x.GPA</td>
-            </tr>
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.TITLE</td>
+            <td>@x.SUBTITLE</td>
+            <td>@x.DEPARTMENT</td>
+            <td>@x.GPA</td>
+            <td><a href="/Egitim/EgitimSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+        </tr>
         }
     </tbody>
 </table>

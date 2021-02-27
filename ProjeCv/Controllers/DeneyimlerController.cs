@@ -31,5 +31,12 @@ namespace ProjeCv.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult DeneyimSil(int id)
+        {
+            var deneyim = db.TBLEXPERIENCE.Find(id);
+            db.TBLEXPERIENCE.Remove(deneyim);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

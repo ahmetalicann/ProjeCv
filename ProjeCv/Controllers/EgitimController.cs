@@ -37,5 +37,23 @@ namespace ProjeCv.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult EgitimGetir(int id)
+        {
+            var veri = db.TBLEDUCATION.Find(id);
+            return View("EgitimGetir",veri);
+        }
+
+        public ActionResult Guncelle(TBLEDUCATION p)
+        {
+            var veriler = db.TBLEDUCATION.Find(p.ID);
+            veriler.ID = p.ID;
+            veriler.TITLE = p.TITLE;
+            veriler.SUBTITLE = p.SUBTITLE;
+            veriler.DEPARTMENT = p.DEPARTMENT;
+            veriler.GPA = p.GPA;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -18,5 +18,24 @@ namespace ProjeCv.Controllers
             cs.Deger1 = db.TBLABOUT.ToList();
             return View(cs);
         }
+
+        public ActionResult VeriGetir(int id)
+        {
+            var veriler = db.TBLABOUT.Find(id);
+            return View("VeriGetir", veriler);
+        }
+
+        public ActionResult Guncelle(TBLABOUT p)
+        {
+            var degerler = db.TBLABOUT.Find(p.ID);
+            degerler.NAME = p.NAME;
+            degerler.SURNAME = p.SURNAME;
+            degerler.ADRESS = p.ADRESS;
+            degerler.PHONE = p.PHONE;
+            degerler.MAIL = p.MAIL;
+            degerler.ABOUT = p.ABOUT;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

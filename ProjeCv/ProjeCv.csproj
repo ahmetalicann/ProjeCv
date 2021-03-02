@@ -198,6 +198,7 @@
     <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\css\resume.css" />
     <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\css\resume.min.css" />
     <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\gulpfile.js" />
+    <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\img\cvFoto.jpeg" />
     <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\img\profile.jpg" />
     <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\index.html" />
     <Content Include="resume-bootstrap4-master\resume-bootstrap4-master\js\resume.js" />
@@ -326,6 +327,12 @@
     <Content Include="Views\Yetenekler\YeniYetenek.cshtml" />
     <Content Include="Views\Hobiler\YeniHobi.cshtml" />
     <Content Include="Views\Basarim\YeniHobi.cshtml" />
+    <Content Include="Views\Hakkimda\VeriGetir.cshtml" />
+    <Content Include="Views\Deneyimler\DeneyimGetir.cshtml" />
+    <Content Include="Views\Egitim\EgitimGetir.cshtml" />
+    <Content Include="Views\Yetenekler\YetenekGetir.cshtml" />
+    <Content Include="Views\Hobiler\HobiGetir.cshtml" />
+    <Content Include="Views\Basarim\BasarimGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,7 +23,7 @@
             <th>@x.ID</th>
             <td>@x.SKILL</td>
             <td><a href="/Yetenekler/YetenekSil/@x.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Yetenekler/YetenekGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
             <td>@Html.ActionLink("Sil Butonu","YetenekSil",new {id = x.ID }, new {@class="btn btn-warning",onclick="return confirm('Silmek İstiyor musunuz?')"})</td>
         </tr>
         }

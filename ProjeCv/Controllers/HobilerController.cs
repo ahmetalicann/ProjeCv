@@ -37,5 +37,20 @@ namespace ProjeCv.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult HobiGetir(int id)
+        {
+            var veri = db.TBLINTERESTS.Find(id);
+            return View("HobiGetir", veri);
+        }
+
+        public ActionResult Guncelle(TBLINTERESTS p)
+        {
+            var veriler = db.TBLINTERESTS.Find(p.ID);
+            veriler.ID = p.ID;
+            veriler.INTEREST = p.INTEREST;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

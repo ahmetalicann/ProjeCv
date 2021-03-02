@@ -1,5 +1,9 @@
 ﻿
-@model ProjeCv.Models.Sinif.Class1 
+@using ProjeCv.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLSKILLS>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -17,18 +21,20 @@
     </thead>
 
     <tbody>
-        @foreach (var x in Model.Deger4)
+        @foreach (var x in Model)
         {
-        <tr>
-            <th>@x.ID</th>
-            <td>@x.SKILL</td>
-            <td><a href="/Yetenekler/YetenekSil/@x.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Yetenekler/YetenekGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
-            <td>@Html.ActionLink("Sil Butonu","YetenekSil",new {id = x.ID }, new {@class="btn btn-warning",onclick="return confirm('Silmek İstiyor musunuz?')"})</td>
-        </tr>
+            <tr>
+                <th>@x.ID</th>
+                <td>@x.SKILL</td>
+                <td><a href="/Yetenekler/YetenekSil/@x.ID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Yetenekler/YetenekGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+                <td>@Html.ActionLink("Sil Butonu", "YetenekSil", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+            </tr>
         }
     </tbody>
 </table>
+
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new { sayfa}))
 
 <a href="/Yetenekler/YeniYetenek/" class="btn btn-info">Yeni Yetenek Ekle</a>
 

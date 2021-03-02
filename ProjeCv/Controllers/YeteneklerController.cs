@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using ProjeCv.Models.Entity;
 using ProjeCv.Models.Sinif;
+using PagedList;
+using PagedList.Mvc;
 
 namespace ProjeCv.Controllers
 {
@@ -12,11 +14,11 @@ namespace ProjeCv.Controllers
     {
         // GET: Yetenekler
         DbMvcCvEntities db = new DbMvcCvEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            Class1 cs = new Class1();
-            cs.Deger4 = db.TBLSKILLS.ToList();
-            return View(cs);
+            
+            var degerler = db.TBLSKILLS.ToList().ToPagedList(sayfa, 3);
+            return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniYetenek()
